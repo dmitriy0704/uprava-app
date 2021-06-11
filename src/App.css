@@ -1,5 +1,26 @@
+@font-face {
+  font-family: 'Futura-Normal';
+  src: local('MyFont'), url(./font/Futura-Normal.eot) format('eot');
+  src: local('MyFont'), url(./font/Futura-Normal.svg) format('svg');
+  src: local('MyFont'), url(./font/Futura-Normal.ttf) format('ttf');
+  src: local('MyFont'), url(./font/Futura-Normal.woff) format('woff');
+  src: local('MyFont'), url(./font/Futura-Normal.woff2) format('woff2');
+
+}
+
+
+html, body{
+  height: 100%;
+
+}
+#root{
+  height: 100%;
+}
+
+
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -13,8 +34,9 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.main_page {
+  padding-top: 120px;
+  background: url("images/bg.jpg");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +46,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-link{
+  font-family: Futura-Normal,sans-serif;
 }
