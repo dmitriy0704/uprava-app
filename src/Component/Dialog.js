@@ -128,9 +128,16 @@ export default function Dialogs() {
 
                 </DialogContent>
                 <DialogActions>
-                    <Button autoFocus onClick={handleClose} color="primary">
-                        OK
-                    </Button>
+
+                    <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
+                        <Grid item xs={3}>
+                            <Button variant="contained" color="primary" autoFocus onClick={handleClose} >
+                                OK
+                            </Button>
+                        </Grid>
+
+                    </Grid>
+
                 </DialogActions>
             </Dialog>
         </div>

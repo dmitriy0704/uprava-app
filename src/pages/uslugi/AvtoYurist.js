@@ -6,12 +6,14 @@ import {Container, Dialog, Grid} from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import Avatar from '@material-ui/core/Avatar';
 import Dialogs from "../../Component/Dialog";
+import {Link} from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 
 const useStyles = makeStyles(() => ({
     main_page: {
         backgroundColor: "#fff",
-        minHeight: 550,
+        minHeight: "100%",
         paddingTop: 0,
         paddingBottom: 100,
         display: "flex",
@@ -112,7 +114,7 @@ const AvtoYurist = () => {
         <Container maxWidth={'xs'} className={classes.main_page}>
             <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}
                   className={classes.header}>
-                <Grid ite xs={12}>
+                <Grid item xs={12}>
                     <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
                         <Grid item xs={2}>
                             <Box className={classes.back}>
@@ -128,7 +130,8 @@ const AvtoYurist = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid ite xs={12}>
+
+                <Grid item xs={12}>
                     <Box className={classes.text}>
                         Просто отправь другу ссылку на наш сайт
                     </Box>
@@ -137,7 +140,7 @@ const AvtoYurist = () => {
             <Grid container direction={"row"} justify={"center"} alignItems={"center"} className={classes.content}>
                 <Grid item xs={12}>
                     <Box>
-<Dialogs/>
+                        <Dialogs/>
                     </Box>
                 </Grid>
             </Grid>

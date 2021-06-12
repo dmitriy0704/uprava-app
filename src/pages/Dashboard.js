@@ -13,7 +13,7 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles(() => ({
     main_page: {
         backgroundColor: "#fff",
-        minHeight: 550,
+        minHeight: "100%",
         paddingTop: 0,
         paddingBottom: 100,
         display: "flex",
@@ -54,8 +54,6 @@ const useStyles = makeStyles(() => ({
     icon: {
         color: '#fff',
         fontSize: 28,
-
-
     }
 }))
 
@@ -72,37 +70,31 @@ const Dashboard = () => {
                     <Box className={classes.back}>
                         <ArrowBackIcon className={classes.icon}/>
                     </Box>
-
                 </Grid>
                 <Grid item xs={8}>
 
-                    <Box>
+
                         <Typography variant={"h6"} component={"h6"} className={classes.title_page}>
                             УПРАВА
                         </Typography>
-                    </Box>
-                    <Box>
+
+
                         <Typography component={"p"} className={classes.text}>
                             Услуги юриста и <br/> независимого эксперта
                         </Typography>
-                    </Box>
+
                 </Grid>
                 <Grid item xs={2}>
                     <img src={message} alt="" style={{maxWidth: 23, marginBottom:3,marginRight:5}}/>
                     <InfoOutlinedIcon className={classes.icon}/>
-
-
-
                 </Grid>
             </Grid>
 
-
             <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
                 <Grid item xs={12}>
-                    <Box className={'content'}>
 
                         <FullWidthTabs/>
-                    </Box>
+
                 </Grid>
             </Grid>
         </Container>

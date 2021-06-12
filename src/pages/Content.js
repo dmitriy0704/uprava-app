@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
     select:{
         color: '#194467',
         textDecoration:'none',
-        fontSize:18,
+        fontSize:20,
         display:"block",
         marginBottom:10
     }
@@ -91,8 +91,6 @@ export default function TabsWrappedLabel() {
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index="one" className={classes.panel}>
-
-
                 <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
                     <Grid item xs={12} style={{marginBottom:15}}>
                         Выберите услугу
@@ -104,11 +102,6 @@ export default function TabsWrappedLabel() {
                         <Link to="/UslugaYurista" className={classes.select}><img src={point} alt="" style={{maxWidth:7,marginRight:5}}/>Услуги назависимого эксперта</Link>
                     </Grid>
                 </Grid>
-
-
-
-
-
             </TabPanel>
             <TabPanel value={value} index="two" className={classes.panel}>
                 Бонусы

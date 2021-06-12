@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles(() => ({
     main_page: {
         backgroundColor: "#fff",
-        minHeight: 550,
+        minHeight: "100%",
         paddingTop: 120,
         paddingBottom: 100,
         display: "flex",
@@ -42,6 +42,14 @@ const useStyles = makeStyles(() => ({
     title_box:{
         height:120,
         marginBottom:30
+    },
+    title_page: {
+        position: 'absolute',
+        top: 15,
+        left: 15,
+        color: '#9D9E9E',
+        width: "100%",
+
     }
 }))
 
@@ -53,7 +61,26 @@ const RegPass = () => {
     return (
 
         <Container maxWidth={'xs'} className={classes.main_page}>
+            <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
+                <Grid item xs={12}>
+                    <Box className={classes.title_page}>
 
+                        <Grid container direction={"row"} justify={"space-between"} alignItems={"center"}>
+                            <Grid item xs={4}>
+                                <Box>
+                                    Вход с паролем
+                                </Box>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Box mr={2}>
+                                    60
+                                </Box>
+                            </Grid>
+                        </Grid>
+
+                    </Box>
+                </Grid>
+            </Grid>
 
             <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
                 <Grid item xs={12}>

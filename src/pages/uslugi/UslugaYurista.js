@@ -13,7 +13,7 @@ import AvtoYurist from "./AvtoYurist";
 const useStyles = makeStyles(() => ({
     main_page: {
         backgroundColor: "#fff",
-        minHeight: 550,
+        minHeight: "100%",
         paddingTop: 0,
         paddingBottom: 100,
         display: "flex",

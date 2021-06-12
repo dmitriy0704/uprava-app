@@ -137,7 +137,7 @@ const theme = createMuiTheme({
                 fontFamily: _font.secondary,
                 fontWeight: '700!important',
                 transition: '0.2s all ease-in-out',
-                fontSize: 22,
+                fontSize: 25,
 
                 '&$disabled': {
                     opacity: '.7',
@@ -166,6 +166,9 @@ const theme = createMuiTheme({
                 borderRadius: 25,
                 marginTop: 30,
                 width: '100%',
+                fontSize:25,
+                fontWeight:400,
+                fontFamily: _font.secondary,
                 [breakpoints.down('sm')]: {},
                 '&:active,&.active,&:hover,&:focus': {
                     backgroundColor: "#fff",
@@ -175,7 +178,6 @@ const theme = createMuiTheme({
             outlinedSecondary: {
                 fontFamily: _font.secondary,
                 fontWeight: 600,
-
                 maxWidth: 300,
                 marginTop: '30',
                 fontSize: '16px',
@@ -193,6 +195,11 @@ const theme = createMuiTheme({
                     opacity: '.7',
                 },
             },
+            label:{
+                fontWeight:100,
+                fontFamily: _font.secondary,
+                fontSize:22
+            }
         },
 
 
@@ -205,18 +212,11 @@ const theme = createMuiTheme({
         MuiCheckbox: {
             root: {
                 padding: defaultTheme.spacing(1 / 2),
-
             },
             colorPrimary: {
-
                 '&$checked': {},
                 '&$disabled': {},
             },
-        },
-        MuiSnackbarContent: {
-            root: {},
-            message: {},
-            action: {},
         },
 
         MuiFormControl: {
@@ -355,6 +355,7 @@ const theme = createMuiTheme({
             colorPrimary: {},
             body1: {
                 fontFamily: _font.secondary,
+                fontSize:18,
 
             },
             h5: {

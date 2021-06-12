@@ -10,10 +10,10 @@ import main_i from '../images/main_i.png';
 
 const useStyles = makeStyles(() => ({
     main_page: {
-        padding:0,
+        padding: 0,
         height: "100%",
     },
-    main:{
+    main: {
         position: 'relative',
         height: '100%',
         display: "flex",
@@ -64,8 +64,8 @@ const useStyles = makeStyles(() => ({
         position: "relative",
         zIndex: 5
     },
-    height:{
-        height:"100%"
+    height: {
+        height: "100%"
     }
 }))
 
@@ -74,22 +74,19 @@ const Home = () => {
     const classes = useStyles()
     return (
         <Container maxWidth={'xs'} className={classes.main_page}>
-            <Grid container direction={"row"} justify={"center"} alignItems={"center"}  className={classes.height}>
+            <Grid container direction={"row"} justify={"center"} alignItems={"center"} className={classes.height}>
                 <Grid item xs={12} className={classes.height}>
 
                     <Box className={classes.main}>
 
-                        <img src={bg} alt="" className={classes.bg}/>
+                        {/*<img src={bg} alt="" className={classes.bg}/>*/}
                         <Box className={classes.main_container}>
                             <Box className={classes.main_i_b}>
                                 <img src={main_i} alt="" className={classes.main_i}/>
                             </Box>
                             <Box className={classes.title_big}>
                                 <Typography variant={"h5"} component={"h5"}>
-                                    УПРАВА
-                                </Typography>
-                                <Typography variant={"h5"} component={"h5"}>
-                                    Messenger
+                                    УПРАВА <br/>Messenger
                                 </Typography>
                             </Box>
                             <Box className={classes.title_min}>
@@ -107,9 +104,11 @@ const Home = () => {
                                 </Typography>
                             </Box>
                             <Box>
-                                <Button variant="contained" color="secondary">
-                                    <Link to="/RegPhone" className={classes.linkBtn}>Вход и регистрация</Link>
-                                </Button>
+                                <Link to="/RegPhone" className={classes.linkBtn}>
+                                    <Button variant="contained" color="secondary">
+                                        Вход и регистрация
+                                    </Button>
+                                </Link>
                             </Box>
                         </Box>
                     </Box>

@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles(() => ({
     main_page: {
         backgroundColor: "#fff",
-        minHeight: 550,
+        minHeight: "100%",
         paddingTop: 120,
         paddingBottom: 100,
         display: "flex",
