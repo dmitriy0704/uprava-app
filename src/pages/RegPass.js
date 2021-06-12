@@ -19,11 +19,12 @@ const useStyles = makeStyles(() => ({
     },
 
     title_big_blue: {
-        marginTop: 30,
+
+
         color: "#194467",
         textAlign: "center",
         fontSize: 20,
-        height:75,
+
     },
     title_blue:{
         color: "#194467",
@@ -38,6 +39,10 @@ const useStyles = makeStyles(() => ({
         marginBottom: 30,
         fontSize: 18,
     },
+    title_box:{
+        height:120,
+        marginBottom:30
+    }
 }))
 
 
@@ -50,14 +55,16 @@ const RegPass = () => {
         <Container maxWidth={'xs'} className={classes.main_page}>
 
 
-            <Grid container direction={"column"} justify={"center"} alignItems={"center"}>
+            <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
                 <Grid item xs={12}>
-
-                    <Box className={classes.title_big_blue}>
-                        <Typography variant={"h5"} component={"h3"}>
-                            Создайте пароль <br/> для входа
-                        </Typography>
+                    <Box className={classes.title_box}>
+                        <Box className={classes.title_big_blue}>
+                            <Typography variant={"h5"} component={"h5"}>
+                                Создайте пароль <br/> для входа
+                            </Typography>
+                        </Box>
                     </Box>
+
 
 
                     <Box className={'reg_input'}>

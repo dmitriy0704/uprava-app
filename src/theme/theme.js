@@ -14,7 +14,6 @@ const theme = createMuiTheme({
                 lineHeight: 1,
                 '&.popoverButton': {
                     color: _palette.text.secondary,
-
                     borderRadius: defaultTheme.spacing(2),
                 },
             },
@@ -48,14 +47,12 @@ const theme = createMuiTheme({
                 textAlign: 'center',
                 color: '#000000',
                 fontSize: 24,
-
                 [breakpoints.down('sm')]: {
                     paddingLeft: defaultTheme.spacing(2),
                     paddingRight: defaultTheme.spacing(2),
                     paddingBottom: 0,
                     fontSize: 20,
                 },
-
                 '& .text': {
                     color: '#000000',
                     fontSize: '20px',
@@ -63,7 +60,6 @@ const theme = createMuiTheme({
                         fontSize: 18,
                     },
                 },
-
                 '& .link': {
                     fontSize: '100%',
                     color: '#000000',
@@ -79,11 +75,9 @@ const theme = createMuiTheme({
                     textAlign: 'center',
                     color: '#000000',
                     backgroundColor: 'transparent',
-
                     '& fieldset': {
                         // borderColor: '#f4d48c!important',
                     },
-
                     [breakpoints.down('sm')]: {},
                     [breakpoints.down('xs')]: {
                         // paddingTop: defaultTheme.spacing(4),
@@ -133,7 +127,7 @@ const theme = createMuiTheme({
         MuiButton: {
             root: {
                 textTransform: 'inherit',
-
+                maxWidth: 300,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -153,17 +147,20 @@ const theme = createMuiTheme({
                 },
             },
             containedPrimary: {
+
                 color: '#fff',
                 backgroundColor: '#194467',
                 borderRadius: 20,
                 width: '100%',
                 height: 45,
+                maxWidth: 300,
                 '&:hover': {
                     backgroundColor: "#fff",
                 },
                 '&:active,&.active': {},
             },
             containedSecondary: {
+                maxWidth: 300,
                 backgroundColor: "#fff",
                 color: "#194467",
                 borderRadius: 25,
@@ -179,7 +176,7 @@ const theme = createMuiTheme({
                 fontFamily: _font.secondary,
                 fontWeight: 600,
 
-
+                maxWidth: 300,
                 marginTop: '30',
                 fontSize: '16px',
                 whiteSpace: 'nowrap',
@@ -197,31 +194,13 @@ const theme = createMuiTheme({
                 },
             },
         },
-        MuiAppBar: {
-            root: {
-                width: 'auto',
-            },
-            colorPrimary: {},
-        },
-        MuiSelect: {
-            iconFilled: {},
-        },
-        MuiMenuItem: {
-            root: {
-                '&$selected': {
-                    // background: _palette.secondary,
-                },
-            },
-            gutters: {},
-        },
+
+
+
         MuiSvgIcon: {
             root: {},
         },
-        MuiDrawer: {
-            paper: {
-                '& a': {},
-            },
-        },
+
         /* форма */
         MuiCheckbox: {
             root: {
@@ -239,78 +218,21 @@ const theme = createMuiTheme({
             message: {},
             action: {},
         },
-        MuiFormHelperText: {
-            root: {
-                left: 0,
-                bottom: 0,
-                textOverflow: 'ellipsis',
-                overflow: 'hidden',
-                width: '100%',
-                whiteSpace: 'nowrap',
-                lineHeight: 1.25,
-                textTransform: 'none',
-                fontSize: 16,
-                color: '#FF5050',
-                fontFamily: _font.secondary,
-                position: 'absolute',
-                '&$error': {
-                    color: '#FF5050',
-                },
-                [breakpoints.down('sm')]: {
-                    fontSize: 12,
-                },
-            },
-            contained: {
-                marginLeft: 0,
-                marginRight: 0,
-            },
-        },
+
         MuiFormControl: {
             root: {
-                paddingBottom: 24,
-                marginTop: 0,
-                marginBottom: 0,
-                maxWidth: '100%',
+                maxWidth: 300,
+                marginBottom:30
             },
+            fullWidth:{
+                maxWidth: 300,
+            }
         },
 
-        MuiPaginationItem: {
-            root: {
 
-                '&$selected': {
-
-                    '&$textSecondary': {},
-                    '&$textPrimary': {},
-                },
-                '&$disabled': {
-                    // visibility: 'hidden',
-                },
-                '&$textSecondary': {},
-                '&:hover': {
-                    transaction: 'none',
-                    // backgroundColor: 'transparent!important',
-                },
-            },
-            outlined: {
-
-
-                [breakpoints.down('xs')]: {},
-                '&$sizeSmall': {},
-
-                '&$disabled': {
-                    visibility: 'visibility',
-                },
-                '&$selected': {
-
-                    '&$textSecondary': {},
-                    '&$sizeSmall': {},
-                },
-            },
-            ellipsis: {},
-            icon: {},
-        },
         MuiOutlinedInput: {
             root: {
+                maxWidth: 300,
                 borderRadius: 20,
                 '&:hover $notchedOutline': {},
                 '&$focused $notchedOutline': {},
@@ -323,7 +245,7 @@ const theme = createMuiTheme({
                 '& legend': {},
             },
             input: {
-
+                maxWidth: 300,
                 '&$disabled': {},
                 '&:-internal-autofill-selected': {},
                 '&:-webkit-autofill': {},
@@ -334,7 +256,7 @@ const theme = createMuiTheme({
         },
         MuiFilledInput: {
             root: {
-
+                maxWidth: 300,
                 '&:before, &:after': {},
                 '&:hover': {},
                 '&$error': {},
@@ -342,7 +264,7 @@ const theme = createMuiTheme({
                 [breakpoints.down('sm')]: {},
             },
             input: {
-
+                maxWidth: 300,
 
                 '&:-internal-autofill-selected': {},
                 '&:-webkit-autofill': {},
@@ -350,17 +272,19 @@ const theme = createMuiTheme({
             },
         },
         MuiInputBase: {
-            root: {},
+            root: {
+                maxWidth: 300,
+            },
 
         },
         MuiExpansionPanelSummary: {
             root: {
-
+                maxWidth: 300,
                 [breakpoints.down('sm')]: {},
                 '&$expanded': {},
             },
             content: {
-
+                maxWidth: 300,
                 '&$expanded': {},
             },
             expandIcon: {
@@ -441,8 +365,7 @@ const theme = createMuiTheme({
 
         MuiTabs: {
             flexContainer: {
-                backgroundColor:'#fff',
-
+                backgroundColor: '#fff',
 
 
                 [breakpoints.down('sm')]: {},
@@ -456,7 +379,7 @@ const theme = createMuiTheme({
 
             wrapper: {
                 color: '#194467',
-                backgroundColor:'#fff',
+                backgroundColor: '#fff',
                 [breakpoints.down('sm')]: {},
             },
             textColorInherit: {

@@ -1,14 +1,15 @@
 import React from "react";
 import '../App.css';
-import {Box, Container, Grid, Typography} from "@material-ui/core";
+import {Box, Container, Grid, Link, Typography} from "@material-ui/core";
 import {makeStyles} from '@material-ui/styles'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import FullWidthTabs from "./Content";
 import message from '../images/message.png';
-
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import Button from "@material-ui/core/Button";
 const useStyles = makeStyles(() => ({
     main_page: {
         backgroundColor: "#fff",
@@ -54,6 +55,7 @@ const useStyles = makeStyles(() => ({
         color: '#fff',
         fontSize: 28,
 
+
     }
 }))
 
@@ -88,6 +90,9 @@ const Dashboard = () => {
                 <Grid item xs={2}>
                     <img src={message} alt="" style={{maxWidth: 23, marginBottom:3,marginRight:5}}/>
                     <InfoOutlinedIcon className={classes.icon}/>
+
+
+
                 </Grid>
             </Grid>
 
@@ -95,6 +100,7 @@ const Dashboard = () => {
             <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
                 <Grid item xs={12}>
                     <Box className={'content'}>
+
                         <FullWidthTabs/>
                     </Box>
                 </Grid>

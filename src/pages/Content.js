@@ -62,7 +62,9 @@ const useStyles = makeStyles((theme) => ({
     select:{
         color: '#194467',
         textDecoration:'none',
-        fontSize:16
+        fontSize:18,
+        display:"block",
+        marginBottom:10
     }
 }));
 
