@@ -4,32 +4,34 @@ import {Link} from "react-router-dom";
 import {Box, Container, Grid, TextField, Typography} from "@material-ui/core";
 import {makeStyles} from '@material-ui/styles'
 import Button from "@material-ui/core/Button";
+import InputMask from "react-input-mask";
+import MaterialInput from "@material-ui/core/Input";
+import {_font} from "../theme";
 
 
 const useStyles = makeStyles(() => ({
     main_page: {
         backgroundColor: "#fff",
         minHeight: "100%",
-        paddingTop: 120,
-        paddingBottom: 100,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        fontFamily: _font.secondary,
     },
 
     title_big_blue: {
 
-
         color: "#194467",
         textAlign: "center",
         fontSize: 20,
-
+        fontFamily: _font.secondary,
     },
     title_blue:{
         color: "#194467",
         textAlign: "center",
         fontSize: 20,
+        fontFamily: _font.secondary,
     },
 
     text: {
@@ -38,10 +40,12 @@ const useStyles = makeStyles(() => ({
         marginTop: 0,
         marginBottom: 30,
         fontSize: 18,
+        fontFamily: _font.secondary,
     },
     title_box:{
         height:120,
-        marginBottom:30
+        marginBottom:30,
+        fontFamily: _font.secondary,
     },
     title_page: {
         position: 'absolute',
@@ -49,6 +53,7 @@ const useStyles = makeStyles(() => ({
         left: 15,
         color: '#9D9E9E',
         width: "100%",
+        fontFamily: _font.secondary,
 
     }
 }))
@@ -60,7 +65,7 @@ const RegPass = () => {
 
     return (
 
-        <Container maxWidth={'xs'} className={classes.main_page}>
+        <Box maxWidth={'xs'} className={classes.main_page}>
             <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
                 <Grid item xs={12}>
                     <Box className={classes.title_page}>
@@ -94,14 +99,10 @@ const RegPass = () => {
 
 
 
-                    <Box className={'reg_input'}>
-                        <TextField
-                            label="Пароль"
-                            variant="outlined"
-                            color={"primary"}
-                            fullWidth={true}
-
-                        />
+                    <Box >
+                        <InputMask
+                            mask="9 9 9 9 9"
+                            variant="outlined">{(inputProps) => <MaterialInput {...inputProps} type="tel" disableUnderline  variant="outlined" color={"primary"}/>}</InputMask>
                     </Box>
 
                     <Box>
@@ -113,7 +114,7 @@ const RegPass = () => {
                     </Box>
                 </Grid>
             </Grid>
-        </Container>
+        </Box>
 
     )
 

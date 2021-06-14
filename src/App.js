@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import RegSMS from "./pages/RegSms";
 import UslugaYurista from "./pages/uslugi/UslugaYurista";
 import AvtoYurist from "./pages/uslugi/AvtoYurist";
+import Lk from "./pages/Lk";
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/AvtoYurist">
             <AvtoYurist/>
+          </Route>
+          <Route path="/Lk">
+            <Lk/>
           </Route>
 
 

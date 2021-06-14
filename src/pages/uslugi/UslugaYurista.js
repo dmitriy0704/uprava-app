@@ -8,21 +8,24 @@ import Avatar from '@material-ui/core/Avatar';
 import {Link} from "react-router-dom";
 import point from "../../images/point.png";
 import AvtoYurist from "./AvtoYurist";
+import message from "../../images/message.png";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import font from "../../theme/font";
+import {_font} from "../../theme";
 
 
 const useStyles = makeStyles(() => ({
     main_page: {
         backgroundColor: "#fff",
         minHeight: "100%",
-        paddingTop: 0,
-        paddingBottom: 100,
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "center",
         paddingLeft: 0,
-        paddingRight: 0
-
+        paddingRight: 0,
+        border:"1px solid #194467"
     },
 
     header: {
@@ -35,6 +38,10 @@ const useStyles = makeStyles(() => ({
     title_page: {
         color: '#fff',
         textAlign: 'left',
+        fontFamily: _font.secondary,
+        fontSize: 24,
+        lineHeight:"28px"
+
 
     },
 
@@ -64,15 +71,64 @@ const useStyles = makeStyles(() => ({
         paddingLeft: 15,
 
     },
+
+    avatar: {
+        paddingTop: 15,
+        paddingRight: 10
+
+    },
+
+    orange: {
+        color: '#fff',
+        backgroundColor: '#ff5722',
+    },
+    purple: {
+        color: '#fff',
+        backgroundColor: '#673ab7',
+    },
+    green: {
+        color: '#fff',
+        backgroundColor: 'green',
+    },
+    content: {
+        paddingLeft: 15,
+        paddingRight: 15
+    },
+    cash: {
+        color: '#194467',
+        fontSize: 18,
+        paddingTop: 15,
+        paddingLeft:10,
+
+    },
+    select: {
+        color: '#194467',
+        textDecoration: 'none',
+        fontSize: 16
+    },
     icon: {
         color: '#fff',
         fontSize: 28,
+        textAlign: "right",
+        marginLeft: 7
+    },
+    icons: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "flex-end"
+    },
+    line: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        width: "100%",
+        borderBottom: "5px solid #EBECEC",
+        paddingTop: 0,
+        paddingBottom: 10,
 
     },
-    avatar: {
-        marginTop: 15,
-
-    },
+    title: {},
     title_item: {
         textAlign: 'left',
         marginTop: 15,
@@ -85,32 +141,6 @@ const useStyles = makeStyles(() => ({
         fontWeight: 200,
         fontSize: 14,
     },
-    orange: {
-        color: '#fff',
-        backgroundColor: '#ff5722',
-    },
-    purple: {
-        color: '#fff',
-        backgroundColor: '#673ab7',
-    },
-    green:{
-        color: '#fff',
-        backgroundColor: 'green',
-    },
-    content: {
-        paddingLeft: 15,
-        paddingRight: 15
-    },
-    cash: {
-        color: '#194467',
-        fontSize: 14,
-        paddingTop:15
-    },
-    select:{
-        color: '#194467',
-        textDecoration:'none',
-        fontSize:16
-    }
 
 }))
 
@@ -121,26 +151,31 @@ const UslugaYurista = () => {
 
     return (
 
-        <Container maxWidth={'xs'} className={classes.main_page}>
-            <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}
+        <Box maxWidth={'xs'} className={classes.main_page}>
+            <Grid container direction={"row"} justify={"center"} alignItems={"flex-start"}
                   className={classes.header}>
-                <Grid ite xs={12}>
-                    <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
-                        <Grid item xs={2}>
+                <Grid item xs={12}>
+                    <Grid container direction={"row"} justify={"space-between"} alignItems={"flex-start"}>
+                        <Grid item xs={1}>
                             <Box className={classes.back}>
-                                <ArrowBackIcon className={classes.icon}/>
+                                <Link to="/LK">
+                                    <ArrowBackIcon className={classes.icon}/>
+                                </Link>
                             </Box>
                         </Grid>
-                        <Grid item xs={8}>
-                            <Box>
-                                <Typography variant={"h6"} component={"h6"} className={classes.title_page}>
-                                    УПРАВА
-                                </Typography>
+                        <Grid item xs={5}>
+                            <Typography variant={"h6"} component={"h6"} className={classes.title_page}>
+                                Услуги
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Box className={classes.icons}>
+                                <Link to="/"><ExitToAppIcon className={classes.icon}/></Link>
                             </Box>
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid ite xs={12}>
+                <Grid item xs={12}>
                     <Grid container direction={"row"} justify={"space-between"} alignItems={"flex-start"}>
                         <Grid item xs={4}>
                             <Box className={classes.lbl}>
@@ -157,96 +192,87 @@ const UslugaYurista = () => {
             </Grid>
             <Grid container direction={"row"} justify={"center"} alignItems={"center"} className={classes.content}>
                 <Grid item xs={12}>
-                    <Grid container direction={"row"} justify={"space-between"} alignItems={"flex-start"}>
-                        <Grid item xs={2}>
-                            <Box className={classes.avatar}>
-                                <Avatar className={classes.orange}>Ба</Avatar>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={8}>
+                    <Link to="/AvtoYurist" className={classes.select}>
+                    <Box className={classes.line}>
+                        <Box className={classes.avatar}>
+                            <Avatar className={classes.orange}>Ба</Avatar>
+                        </Box>
+                        <Box className={classes.title}>
                             <Box className={classes.title_item}>
                                 Банкротство физических лиц
                             </Box>
                             <Box className={classes.text_item}>
                                 Плюс скидки на телефоны, строительные работы, рекламы и др.
                             </Box>
-                        </Grid>
-                        <Grid item xs={2}>
-                            <Box className={classes.cash}>
-                                7000 р.
-                            </Box>
-                        </Grid>
-                    </Grid>
+                        </Box>
+                        <Box className={classes.cash}>
+                            7000&nbsp;р.
+                        </Box>
+                    </Box>
+                    </Link>
                 </Grid>
                 <Grid item xs={12}>
-                    <Grid container direction={"row"} justify={"space-between"} alignItems={"flex-start"}>
-                        <Grid item xs={2}>
+                    <Link to="/AvtoYurist" className={classes.select}>
+                        <Box className={classes.line}>
                             <Box className={classes.avatar}>
                                 <Avatar className={classes.purple}>Ав</Avatar>
                             </Box>
-                        </Grid>
-                        <Grid item xs={8}>
-                            <Box className={classes.title_item}>
-                                <Link to="/AvtoYurist"  className={classes.select}>АвтоЮрист</Link>
+                            <Box className={classes.title}>
+                                <Box className={classes.title_item}>
+                                    АвтоЮрист
+                                </Box>
+                                <Box className={classes.text_item}>
+                                    Плюс скидки на телефоны, строительные работы, рекламы и др.
+                                </Box>
                             </Box>
-                            <Box className={classes.text_item}>
-                                Плюс скидки на телефоны, строительные работы, рекламы и др.
-                            </Box>
-                        </Grid>
-                        <Grid item xs={2}>
                             <Box className={classes.cash}>
-                                7000 р.
+                                7000&nbsp;р.
                             </Box>
-                        </Grid>
-                    </Grid>
+                        </Box>
+                    </Link>
                 </Grid>
                 <Grid item xs={12}>
-                    <Grid container direction={"row"} justify={"space-between"} alignItems={"flex-start"}>
-                        <Grid item xs={2}>
+                    <Link to="/AvtoYurist" className={classes.select}>
+                        <Box className={classes.line}>
                             <Box className={classes.avatar}>
                                 <Avatar className={classes.orange}>Се</Avatar>
                             </Box>
-                        </Grid>
-                        <Grid item xs={8}>
-                            <Box className={classes.title_item}>
-                               Семейные споры
+                            <Box className={classes.title}>
+                                <Box className={classes.title_item}>
+                                    Семейные споры
+                                </Box>
+                                <Box className={classes.text_item}>
+                                    Плюс скидки на телефоны, строительные работы, рекламы и др.
+                                </Box>
                             </Box>
-                            <Box className={classes.text_item}>
-                                Плюс скидки на телефоны, строительные работы, рекламы и др.
-                            </Box>
-                        </Grid>
-                        <Grid item xs={2}>
                             <Box className={classes.cash}>
-                                7000 р.
+                                7000&nbsp;р.
                             </Box>
-                        </Grid>
-                    </Grid>
+                        </Box>
+                    </Link>
                 </Grid>
                 <Grid item xs={12}>
-                    <Grid container direction={"row"} justify={"space-between"} alignItems={"flex-start"}>
-                        <Grid item xs={2}>
+                    <Link to="/AvtoYurist" className={classes.select}>
+                        <Box className={classes.line}>
                             <Box className={classes.avatar}>
                                 <Avatar className={classes.green}>На</Avatar>
                             </Box>
-                        </Grid>
-                        <Grid item xs={8}>
-                            <Box className={classes.title_item}>
-                                Наследственны споры
+                            <Box className={classes.title}>
+                                <Box className={classes.title_item}>
+                                    Наследственные споры
+                                </Box>
+                                <Box className={classes.text_item}>
+                                    Плюс скидки на телефоны, строительные работы, рекламы и др.
+                                </Box>
                             </Box>
-                            <Box className={classes.text_item}>
-                                Плюс скидки на телефоны, строительные работы, рекламы и др.
-                            </Box>
-                        </Grid>
-                        <Grid item xs={2}>
                             <Box className={classes.cash}>
-                                7000 р.
+                                7000&nbsp;р.
                             </Box>
-                        </Grid>
-                    </Grid>
+                        </Box>
+                    </Link>
                 </Grid>
-
             </Grid>
-        </Container>
+        </Box>
     )
 }
 export default UslugaYurista;

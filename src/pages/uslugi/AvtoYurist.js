@@ -8,6 +8,10 @@ import Avatar from '@material-ui/core/Avatar';
 import Dialogs from "../../Component/Dialog";
 import {Link} from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import message from "../../images/message.png";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import {_font} from "../../theme";
 
 
 const useStyles = makeStyles(() => ({
@@ -35,6 +39,9 @@ const useStyles = makeStyles(() => ({
     title_page: {
         color: '#fff',
         textAlign: 'left',
+        fontFamily: _font.secondary,
+        fontSize: 24,
+        lineHeight:"28px"
 
     },
 
@@ -68,6 +75,7 @@ const useStyles = makeStyles(() => ({
         color: '#fff',
         fontSize: 28,
 
+
     },
     avatar: {
         marginTop: 15,
@@ -100,6 +108,14 @@ const useStyles = makeStyles(() => ({
     cash: {
         color: '#194467',
         fontSize: 25,
+    },
+    icons: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "flex-end"
+    },
+    line:{
+
     }
 
 }))
@@ -111,21 +127,27 @@ const AvtoYurist = () => {
 
     return (
 
-        <Container maxWidth={'xs'} className={classes.main_page}>
+        <Box maxWidth={'xs'} className={classes.main_page}>
             <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}
                   className={classes.header}>
                 <Grid item xs={12}>
-                    <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
-                        <Grid item xs={2}>
+                    <Grid container direction={"row"} justify={"space-between"} alignItems={"flex-start"}>
+                        <Grid item xs={1}>
                             <Box className={classes.back}>
-                                <ArrowBackIcon className={classes.icon}/>
+                                <Link to="/UslugaYurista">
+                                    <ArrowBackIcon className={classes.icon}/>
+                                </Link>
                             </Box>
                         </Grid>
-                        <Grid item xs={8}>
-                            <Box>
-                                <Typography variant={"h6"} component={"h6"} className={classes.title_page}>
-                                    УПРАВА
-                                </Typography>
+                        <Grid item xs={5}>
+                            <Typography variant={"h6"} component={"h6"} className={classes.title_page}>
+                                АвтоЮрист
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Box className={classes.icons}>
+                                <InfoOutlinedIcon className={classes.icon}/>
+                                <Link to="/"><ExitToAppIcon className={classes.icon} style={{marginLeft:10}}/></Link>
                             </Box>
                         </Grid>
                     </Grid>
@@ -144,7 +166,7 @@ const AvtoYurist = () => {
                     </Box>
                 </Grid>
             </Grid>
-        </Container>
+        </Box>
     )
 }
 export default AvtoYurist;

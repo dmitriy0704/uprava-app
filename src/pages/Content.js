@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -13,8 +13,7 @@ import {Grid} from "@material-ui/core";
 import point from "../images/point.png";
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
+    const {children, value, index, ...other} = props;
 
 
     return (
@@ -49,22 +48,29 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper,
+
     },
     panel: {
         backgroundColor: "#fff",
-        textAlign:"left",
-        paddingLeft: 15,
-        paddingRight: 15
+        textAlign: "left",
+        paddingLeft: 0,
+        paddingRight: 0
 
     },
-    select:{
+    select: {
         color: '#194467',
-        textDecoration:'none',
-        fontSize:20,
+        textDecoration: 'none',
+        fontSize: 20,
+        display: "block",
+        marginBottom: 10
+    },
+    line: {
         display:"block",
-        marginBottom:10
+        width:"100%",
+
+        borderBottom:"5px solid #EBECEC",
+        paddingTop:10,
+        paddingBottom:5
     }
 }));
 
@@ -91,17 +97,30 @@ export default function TabsWrappedLabel() {
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index="one" className={classes.panel}>
-                <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
-                    <Grid item xs={12} style={{marginBottom:15}}>
-                        Выберите услугу
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Link to="/UslugaYurista"  className={classes.select}><img src={point} alt="" style={{maxWidth:7,marginRight:5}}/>Услуги юриста</Link>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Link to="/UslugaYurista" className={classes.select}><img src={point} alt="" style={{maxWidth:7,marginRight:5}}/>Услуги назависимого эксперта</Link>
-                    </Grid>
-                </Grid>
+
+                <span className={classes.line}>
+                    Выберите услугу
+                </span>
+
+                <span className={classes.line}>
+                <Link to="/UslugaYurista"
+                      className={classes.select}>
+                    <img src={point} alt=""
+                         style={{maxWidth: 7, marginRight: 5}}/>
+                    Услуги юриста
+                </Link>
+                </span>
+                <span className={classes.line}>
+                <Link to="/UslugaYurista"
+                      className={classes.select}>
+                    <img src={point} alt=""
+                         style={{maxWidth: 7, marginRight: 5}}/>
+                    Услуги назависимого эксперта</Link>
+                </span>
+
+
+
+
             </TabPanel>
             <TabPanel value={value} index="two" className={classes.panel}>
                 Бонусы

@@ -6,6 +6,7 @@ import {makeStyles} from '@material-ui/styles'
 import Button from "@material-ui/core/Button";
 import bg from '../images/bg.jpg';
 import main_i from '../images/main_i.png';
+import {_font} from "../theme";
 
 
 const useStyles = makeStyles(() => ({
@@ -38,34 +39,40 @@ const useStyles = makeStyles(() => ({
         color: "#fff",
         textAlign: "center",
         fontSize: 24,
-        fontFamily: 'Futura-Normal,serif',
+        fontFamily: _font.secondary,
     },
     title_min: {
         fontSize: 24,
         marginTop: 30,
         color: "#fff",
         textAlign: "center",
+        fontFamily: _font.secondary,
     },
     text: {
         color: "#fff",
         textAlign: "center",
         marginTop: 30,
         fontSize: 18,
+        fontFamily: _font.secondary,
     },
     link: {
         display: "block",
         color: "#fff",
+        fontFamily: _font.secondary,
     },
     linkBtn: {
         color: "#194467",
         textDecoration: 'none',
+        fontFamily: _font.secondary,
     },
     main_container: {
         position: "relative",
-        zIndex: 5
+        zIndex: 5,
+        fontFamily: _font.secondary,
     },
     height: {
-        height: "100%"
+        height: "100%",
+        fontFamily: _font.secondary,
     }
 }))
 

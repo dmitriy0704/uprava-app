@@ -72,8 +72,6 @@ const Dashboard = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={8}>
-
-
                         <Typography variant={"h6"} component={"h6"} className={classes.title_page}>
                             УПРАВА
                         </Typography>
@@ -93,7 +91,7 @@ const Dashboard = () => {
             <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
                 <Grid item xs={12}>
 
-                        <FullWidthTabs/>
+                        {/*<FullWidthTabs/>*/}
 
                 </Grid>
             </Grid>
