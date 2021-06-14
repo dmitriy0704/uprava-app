@@ -366,6 +366,7 @@ const theme = createMuiTheme({
             root: {
                 fontFamily: _font.secondary,
             },
+
             colorPrimary: {},
             body1: {
                 fontFamily: _font.secondary,
@@ -375,7 +376,7 @@ const theme = createMuiTheme({
             },
             h5: {
                 fontFamily: _font.secondary,
-                fontSize: 30,
+                fontSize: 35,
             }
         },
 

@@ -91,10 +91,10 @@ const RegName = () => {
                     </Box>
                     <Box >
                         <InputMask
-                            mask="***************"
+                            mask=""
                             variant="outlined">{(inputProps) =>
                             <MaterialInput {...inputProps}
-                                           type="tel" disableUnderline
+                                           type="text" disableUnderline
                                            variant="outlined"
                                            color={"primary"}/>}
                         </InputMask>

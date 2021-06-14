@@ -38,7 +38,6 @@ const useStyles = makeStyles(() => ({
         marginTop: 30,
         color: "#fff",
         textAlign: "center",
-        fontSize: 24,
         fontFamily: _font.secondary,
     },
     title_min: {
