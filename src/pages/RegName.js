@@ -57,6 +57,15 @@ const useStyles = makeStyles(() => ({
         color: '#9D9E9E',
         width: "100%",
         fontFamily: _font.secondary,
+    },
+    a:{
+        textDecoration:"none",
+        '&$focused': {
+            textDecoration:"none",
+        },
+        '&$active': {
+            textDecoration:"none",
+        },
     }
 }))
 
@@ -101,7 +110,7 @@ const RegName = () => {
                     </Box>
 
                     <Box>
-                        <Link to="/Lk">
+                        <Link to="/Lk" className={classes.a}>
                             <Button variant="contained" color="primary">
                                 Даллее
                             </Button>

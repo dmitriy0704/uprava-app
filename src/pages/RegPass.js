@@ -55,6 +55,15 @@ const useStyles = makeStyles(() => ({
         width: "100%",
         fontFamily: _font.secondary,
 
+    },
+    a:{
+        textDecoration:"none",
+        '&$focused': {
+            textDecoration:"none",
+        },
+        '&$active': {
+            textDecoration:"none",
+        },
     }
 }))
 
@@ -106,7 +115,7 @@ const RegPass = () => {
                     </Box>
 
                     <Box>
-                        <Link to="/RegName">
+                        <Link to="/RegName" className={classes.a}>
                             <Button variant="contained" color="primary">
                                 Сохранить
                             </Button>

@@ -326,7 +326,9 @@ const theme = createMuiTheme({
         MuiInputLabel: {
             root: {
 
-                '&$focused': {},
+                '&$focused': {
+
+                },
 
                 '&$error': {},
             },

@@ -59,6 +59,15 @@ const useStyles = makeStyles(() => ({
         width: "100%",
         fontFamily: _font.secondary,
 
+    },
+    a:{
+        textDecoration:"none",
+        '&$focused': {
+            textDecoration:"none",
+        },
+        '&$active': {
+            textDecoration:"none",
+        },
     }
 }))
 
@@ -103,7 +112,7 @@ const RegSMS = () => {
                         <InputMask mask="9 9 9 9 9" variant="outlined">{(inputProps) => <MaterialInput {...inputProps} type="tel" disableUnderline variant="outlined" color={"primary"}/>}</InputMask>
                     </Box>
                     <Box>
-                        <Link to="/RegPass">
+                        <Link to="/RegPass" className={classes.a}>
                             <Button variant="contained" color="primary">
                                 Даллее
                             </Button>

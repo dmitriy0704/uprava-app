@@ -63,6 +63,15 @@ const useStyles = makeStyles(() => ({
         left: 10,
         maxWidth: 30,
         fontFamily: _font.secondary,
+    },
+    a:{
+        textDecoration:"none",
+        '&$focused': {
+            textDecoration:"none",
+        },
+        '&$active': {
+            textDecoration:"none",
+        },
     }
 }))
 
@@ -101,7 +110,7 @@ const RegPhone = () => {
                             />}</InputMask>
                     </Box>
                     <Box>
-                        <Link to="/RegSMS">
+                        <Link to="/RegSMS" className={classes.a}>
                             <Button variant="contained" color="primary">
                                 Даллее
                             </Button>
