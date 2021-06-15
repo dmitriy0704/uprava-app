@@ -108,7 +108,7 @@ const useStyles = makeStyles(() => ({
     },
     icon: {
         color: '#fff',
-        fontSize: 28,
+        fontSize: 35,
         textAlign: "right",
         marginLeft: 7
     },

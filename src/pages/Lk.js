@@ -8,6 +8,8 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import FullWidthTabs from "./Content";
 import {_font} from "../theme";
+import About from "../components/About";
+
 
 const useStyles = makeStyles(() => ({
     main_page: {
@@ -67,7 +69,7 @@ const useStyles = makeStyles(() => ({
     back: {},
     icon: {
         color: '#fff',
-        fontSize: 28,
+        fontSize: 35,
         marginLeft: 10,
         marginRight:7
     }
@@ -88,7 +90,8 @@ const Lk = () => {
                         </Grid>
                         <Grid item xs={5}>
                             <img src={message} alt="" style={{maxWidth: 23, marginBottom: 3, marginRight: 7}}/>
-                            <InfoOutlinedIcon className={classes.icon}/>
+                            {/*<InfoOutlinedIcon className={classes.icon}/>*/}
+                            <About/>
                             <Link to="/"><ExitToAppIcon className={classes.icon}/></Link>
                         </Grid>
                     </Grid>

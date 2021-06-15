@@ -5,13 +5,14 @@ import Box from "@material-ui/core/Box";
 import {Container, Dialog, Grid} from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import Avatar from '@material-ui/core/Avatar';
-import Dialogs from "../../Component/Dialog";
+import Dialogs from "../../components/Dialog";
 import {Link} from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import message from "../../images/message.png";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import {_font} from "../../theme";
+import About from "../../components/About";
 
 
 const useStyles = makeStyles(() => ({
@@ -73,7 +74,7 @@ const useStyles = makeStyles(() => ({
     },
     icon: {
         color: '#fff',
-        fontSize: 28,
+        fontSize: 35,
 
 
     },
@@ -146,7 +147,7 @@ const AvtoYurist = () => {
                         </Grid>
                         <Grid item xs={4}>
                             <Box className={classes.icons}>
-                                <InfoOutlinedIcon className={classes.icon}/>
+                                <About/>
                                 <Link to="/"><ExitToAppIcon className={classes.icon} style={{marginLeft:10}}/></Link>
                             </Box>
                         </Grid>

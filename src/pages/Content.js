@@ -12,7 +12,10 @@ import Button from "@material-ui/core/Button";
 import {Grid} from "@material-ui/core";
 import point from "../images/point.png";
 import {_font} from "../theme";
-import Bonus from "../Component/Bonus";
+import Bonus from "../components/Bonus";
+import Actions1 from "../components/Actions1";
+import Actions3 from "../components/Actions3";
+import Actions2 from "../components/Actions2";
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -69,11 +72,11 @@ const useStyles = makeStyles((theme) => ({
     },
     line: {
         display: "block",
-        width: "100%",
+
         color: '#194467',
         fontSize: 18,
         borderBottom: "5px solid #EBECEC",
-        paddingTop: 10,
+        paddingTop: 15,
         paddingBottom: 5,
         paddingLeft: 16
     },
@@ -92,30 +95,44 @@ const useStyles = makeStyles((theme) => ({
     text_grey: {
         color: "#B2B3B3",
         fontFamily: _font.secondary,
-        fontSize: 20,
+        fontSize: 16,
         textAlign: "left",
-        marginLeft: 16,
+        marginLeft: 0,
         lineHeight: 1.1,
-        marginTop: 15
+        marginTop: 5,
+        marginBottom: 5
     },
     action: {
         border: "3px solid #194467",
         borderRadius: 5,
-        marginTop:10,
-        marginLeft:10,
-        marginRight:10,
-        padding:10
+        marginTop: 12,
+        marginLeft: 10,
+        marginRight: 10,
+        padding: 10
     },
     action_label: {
         color: '#194467',
         fontFamily: _font.secondary,
-        fontSize: 16
+        fontSize: 22
     },
     action_text: {
         color: "#B2B3B3",
-        fontSize: 14,
+        fontSize: 17,
         fontFamily: _font.secondary,
-        lineHeight:1.1
+        lineHeight: 1.1
+    },
+    title_min: {
+        color: '#194467',
+        fontFamily: _font.secondary,
+        fontSize: 20
+    },
+    digit: {
+        color: '#194467',
+        fontFamily: _font.secondary,
+        fontSize: 25,
+        textAlign:"right",
+        paddingRight:16
+
     }
 
 
@@ -157,52 +174,70 @@ export default function TabsWrappedLabel() {
                 </span>
             </TabPanel>
             <TabPanel value={value} index="two" className={classes.panel}>
-                <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
-                    <Grid item xs={12}>
-                        <Bonus/>
-                    </Grid>
-                </Grid>
-                <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
-                    <Grid item xs={12}>
-                        <Box className={classes.text_grey}>
+                <Bonus/>
+                <span className={classes.text_grey}>
                             Акции и скидки
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Box className={classes.action}>
-                            <Box className={classes.action_label}>
-                                5% скидка на покупку телефона
-                            </Box>
-                            <Box className={classes.action_text}>
-                                от компании ХмиАоми, вы можете получить скидку в самом магазине
-                            </Box>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Box className={classes.action}>
-                            <Box className={classes.action_label}>
-                                Бесплатная консультация юриста
-                            </Box>
-                            <Box className={classes.action_text}>
-                                от компании ХмиАоми, вы можете получить скидку в самом магазине
-                            </Box>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Box className={classes.action}>
-                            <Box className={classes.action_label}>
-                                3000р на поход в Q20
-                            </Box>
-                            <Box className={classes.action_text}>
-                                от компании ХмиАоми, вы можете получить скидку в самом магазине
-                            </Box>
-                        </Box>
-                    </Grid>
-                </Grid>
-
+                </span>
+                <Actions1/>
+                <Actions2/>
+                <Actions3/>
             </TabPanel>
             <TabPanel value={value} index="three" className={classes.panel}>
-                Отчеты
+                <span className={classes.line}>
+                    <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
+                        <Grid item xs={10}>
+                            <Box className={classes.title_min}>Отправлено рекомендаций</Box>
+                            <Box className={classes.text_grey}>Всего</Box>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Box className={classes.digit}>120</Box>
+                        </Grid>
+                    </Grid>
+                </span>
+                <span className={classes.line}>
+                    <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
+                        <Grid item xs={10}>
+                            <Box className={classes.title_min}>Без перехода</Box>
+                            <Box className={classes.text_grey}>По ссылке не перешли</Box>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Box className={classes.digit}>40</Box>
+                        </Grid>
+                    </Grid>
+                </span>
+                <span className={classes.line}>
+                    <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
+                        <Grid item xs={10}>
+                            <Box className={classes.title_min}>Ранее уже рекомендованные</Box>
+                            <Box className={classes.text_grey}>Кто-то уже рекомендовал</Box>
+                        </Grid>
+                        <Grid item xs={2}>
+                           <Box className={classes.digit}>15</Box>
+                        </Grid>
+                    </Grid>
+                </span>
+                <span className={classes.line}>
+                    <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
+                        <Grid item xs={10}>
+                            <Box className={classes.title_min}>Актуальные рекомендации</Box>
+                            <Box className={classes.text_grey}>В обработке</Box>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Box className={classes.digit}>65</Box>
+                        </Grid>
+                    </Grid>
+                </span>
+                <span className={classes.line}>
+                    <Grid container direction={"row"} justify={"flex-start"} alignItems={"flex-start"}>
+                        <Grid item xs={10}>
+                            <Box className={classes.title_min}>Достигнуто цели</Box>
+                            <Box className={classes.text_grey}>Согласно правилам</Box>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Box className={classes.digit}>5</Box>
+                        </Grid>
+                    </Grid>
+                </span>
             </TabPanel>
         </div>
     );

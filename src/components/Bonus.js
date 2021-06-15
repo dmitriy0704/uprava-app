@@ -104,11 +104,11 @@ const DialogTitle = withStyles(styles)((props) => {
     return (
         <MuiDialogTitle disableTypography className={classes.root} {...other}>
             <Typography variant="h6">{children}</Typography>
-            {onClose ? (
-                <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-                    <CloseIcon/>
-                </IconButton>
-            ) : null}
+            {/*{onClose ? (*/}
+            {/*    <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>*/}
+            {/*        <CloseIcon/>*/}
+            {/*    </IconButton>*/}
+            {/*) : null}*/}
         </MuiDialogTitle>
     );
 });
@@ -128,12 +128,19 @@ const DialogActions = withStyles((theme) => ({
 
 export default function Bonus() {
     const [open, setOpen] = React.useState(false);
+    const [open1, setOpen1] = React.useState(false);
     const classes = useStyles()
     const handleClickOpen = () => {
         setOpen(true);
     };
     const handleClose = () => {
         setOpen(false);
+    };
+    const handleClickOpen1 = () => {
+        setOpen1(true);
+    };
+    const handleClose1 = () => {
+        setOpen1(false);
     };
     const [value, setValue] = React.useState('select1');
 
@@ -179,7 +186,9 @@ export default function Bonus() {
             </Box>
             <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
                 <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-                    Способ получения денег
+                    <span style={{fontFamily: _font.secondary,
+                        fontSize: 23,
+                        color: "#194467"}}> Способ получения денег</span>
                 </DialogTitle>
                 <DialogContent dividers>
                     <FormControl component="fieldset" fullWidth={true}>
@@ -232,7 +241,12 @@ export default function Bonus() {
                                         </Grid>
                                     </Box>}
                                     {value === 'select2' &&
-                                    <Box className={'check_content'}>
+                                    <Box >
+                                        <Grid item xs={12}>
+                                            <Box className={classes.text_grey}>
+                                               Телефон
+                                            </Box>
+                                        </Grid>
                                         <Grid item xs={12}>
                                             <Box className={classes.reg_input}>
                                                 <InputMask mask="+7 (999) 999-99-99" variant="outlined">{(inputProps) =>
@@ -262,13 +276,51 @@ export default function Bonus() {
                 <DialogActions>
                     <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
                         <Grid item xs={12}>
-                            <Button variant="contained" color="primary" autoFocus onClick={handleClose} className={classes.btn}>
+                            <Button variant="contained" color="primary" autoFocus onClick={handleClickOpen1} className={classes.btn}>
                                 ОТПРАВИТЬ ЗАПРОС НА ПОЛУЧЕНИЕ БОНУСОВ
                             </Button>
                         </Grid>
                     </Grid>
                 </DialogActions>
             </Dialog>
+
+
+            <Dialog onClose={handleClose1} aria-labelledby="customized-dialog-title" open={open1}>
+                <DialogTitle id="customized-dialog-title" onClose={handleClose1}>
+                    <span style={{color:"#194467",fontSize:25}}>Введите пароль</span>
+
+                </DialogTitle>
+                <DialogContent dividers>
+                    <Typography style={{
+                        fontFamily: _font.secondary,
+                        fontSize: 21,
+                        lineHeight: 1.1,
+                        textAlign: "left",
+                        marginBottom: 15
+                    }}>
+                        <InputMask
+                            mask="9 9 9 9 9"
+                            variant="outlined">{(inputProps) => <MaterialInput {...inputProps} type="tel" disableUnderline  variant="outlined" color={"primary"}/>}</InputMask>
+                    </Typography>
+
+
+                </DialogContent>
+                <DialogActions>
+                    <Grid container direction={"row"} justify={"space-between"} alignItems={"center"}>
+                        <Grid item xs={7}>
+                            <Button variant="outlined" color="secondary" autoFocus onClick={handleClose1} fullWidth={true}>
+                               Отменить
+                            </Button>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Button variant="contained" color="primary" autoFocus onClick={handleClose1}>
+                                OK
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </DialogActions>
+            </Dialog>
+
         </>
     );
 }

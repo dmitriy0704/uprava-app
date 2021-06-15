@@ -74,8 +74,8 @@ const styles = (theme) => ({
     },
     closeButton: {
         position: 'absolute',
-        right: theme.spacing(1),
-        top: theme.spacing(1),
+        right: -5,
+        top: -5,
         color: theme.palette.grey[500],
     },
 });
@@ -109,14 +109,21 @@ const DialogActions = withStyles((theme) => ({
 
 export default function Dialogs() {
     const [open, setOpen] = React.useState(false);
+    const [open1, setOpen1] = React.useState(false);
     const classes = useStyles()
     const handleClickOpen = () => {
         setOpen(true);
+    };
+    const handleClickOpen1 = () => {
+        setOpen1(true);
     };
     const handleClose = () => {
         setOpen(false);
     };
 
+    const handleClose1 = () => {
+        setOpen1(false);
+    };
     const [state, setState] = React.useState({
         checkedA: true,
         checkedB: true,
@@ -205,10 +212,11 @@ export default function Dialogs() {
                         fontSize: 21,
                         lineHeight: 1.1,
                         textAlign: "left",
-                        marginBottom: 0
+                        marginBottom: 15
                     }}>
                         После заключения договора, Вы и Ваш друг получат бонус, указанный в правилах.
                     </Typography>
+
                     <Typography style={{
                         fontFamily: _font.secondary,
                         fontSize: 21,
@@ -223,13 +231,26 @@ export default function Dialogs() {
                 <DialogActions>
                     <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
                         <Grid item xs={3}>
-                            <Button variant="contained" color="primary" autoFocus onClick={handleClose}>
+                            <Button variant="contained" color="primary" autoFocus onClick={handleClickOpen1}>
                                 OK
                             </Button>
                         </Grid>
                     </Grid>
                 </DialogActions>
             </Dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     );
 }

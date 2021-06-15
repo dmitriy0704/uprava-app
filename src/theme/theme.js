@@ -44,9 +44,8 @@ const theme = createMuiTheme({
                 paddingBottom: 0,
                 marginBottom: 0,
                 overflowY: 'visible',
-                lineHeight: 1.5,
-
-                textAlign: 'center',
+                lineHeight: 1.2,
+                textAlign: 'left',
                 color: '#000000',
                 fontSize: 24,
                 [breakpoints.down('sm')]: {
@@ -77,14 +76,6 @@ const theme = createMuiTheme({
                     textAlign: 'center',
                     color: '#000000',
                     backgroundColor: 'transparent',
-                    '& fieldset': {
-                        // borderColor: '#f4d48c!important',
-                    },
-                    [breakpoints.down('sm')]: {},
-                    [breakpoints.down('xs')]: {
-                        // paddingTop: defaultTheme.spacing(4),
-                    },
-
                     '& .field_row>*': {
                         [breakpoints.up('md')]: {
                             '&:first-child:not(:last-child)': {
@@ -94,17 +85,6 @@ const theme = createMuiTheme({
                                 paddingLeft: defaultTheme.spacing(1),
                             },
                         },
-                    },
-                    '&.fields-bottom': {
-                        // костыль
-                        borderTopLeftRadius: 0,
-                        borderTopRightRadius: 0,
-                    },
-                    '&.fields-top:first-child:not(:last-child)': {
-                        // костыль
-                        borderBottomLeftRadius: 0,
-                        borderBottomRightRadius: 0,
-                        marginBottom: -1,
                     },
                 },
                 '& .actions': {
@@ -156,14 +136,13 @@ const theme = createMuiTheme({
                 },
             },
             containedPrimary: {
-
                 color: '#fff',
                 backgroundColor: '#194467',
                 borderRadius: 20,
                 width: '100%',
                 height: 45,
                 maxWidth: 300,
-                fontSize: 20,
+                fontSize: 22,
                 '&:hover': {
                     backgroundColor: '#194467',
                 },
@@ -180,51 +159,31 @@ const theme = createMuiTheme({
                 marginTop: 30,
                 width: '100%',
                 fontSize: 30,
-
                 fontFamily: _font.secondary,
                 [breakpoints.down('sm')]: {},
                 '&:active,&.active,&:hover,&:focus': {
                     backgroundColor: "#fff",
                 },
-                '&$disabled': {},
-
             },
             outlinedSecondary: {
                 fontFamily: _font.secondary,
                 fontWeight: 600,
                 maxWidth: 300,
-                marginTop: '30',
-                fontSize: '16px',
                 whiteSpace: 'nowrap',
+                borderRadius:25,
+                backgroundColor:"#B2B3B3",
+                borderColor:"#B2B3B3",
+                color:"#fff",
                 [breakpoints.down('sm')]: {
-                    fontSize: '14px',
-                },
-                '&:hover': {
-                    borderWidth: 2,
-
-
-                },
-                '&:active,&.active': {borderWidth: 2},
-                '&$disabled': {
-                    opacity: '.7',
+                    fontSize: '18px',
                 },
             },
-
-        },
-
-
-        MuiSvgIcon: {
-            root: {},
         },
 
         /* форма */
         MuiCheckbox: {
             root: {
                 padding: defaultTheme.spacing(1 / 2),
-            },
-            colorPrimary: {
-                '&$checked': {},
-                '&$disabled': {},
             },
         },
 
@@ -237,27 +196,13 @@ const theme = createMuiTheme({
                 maxWidth: 300,
             }
         },
-
-
         MuiOutlinedInput: {
             root: {
                 maxWidth: 300,
                 borderRadius: 20,
-                '&:hover $notchedOutline': {},
-                '&$focused $notchedOutline': {},
-                '&$error $notchedOutline': {},
-                '&$disabled $notchedOutline': {},
-            },
-            multiline: {},
-            notchedOutline: {
-
-                '& legend': {},
             },
             input: {
                 maxWidth: 300,
-                '&$disabled': {},
-                '&:-internal-autofill-selected': {},
-                '&:-webkit-autofill': {},
             },
             adornedEnd: {
                 paddingRight: 0,
@@ -266,18 +211,9 @@ const theme = createMuiTheme({
         MuiFilledInput: {
             root: {
                 maxWidth: 300,
-                '&:before, &:after': {},
-                '&:hover': {},
-                '&$error': {},
-                '&$focused': {},
-                [breakpoints.down('sm')]: {},
             },
             input: {
                 maxWidth: 300,
-
-                '&:-internal-autofill-selected': {},
-                '&:-webkit-autofill': {},
-                [breakpoints.down('sm')]: {},
             },
         },
         MuiInputBase: {
@@ -297,101 +233,52 @@ const theme = createMuiTheme({
             },
             input: {
                 textAlign: "center",
-
             }
-
         },
         MuiExpansionPanelSummary: {
             root: {
                 maxWidth: 300,
-                [breakpoints.down('sm')]: {},
-                '&$expanded': {},
             },
             content: {
                 maxWidth: 300,
-                '&$expanded': {},
-            },
-            expandIcon: {
-
-                '&$expanded': {},
             },
         },
         MuiExpansionPanel: {
             root: {
-
-                '&:last-child': {},
                 margin: 0,
                 '&$expanded': {
                     margin: 0,
                 },
             },
         },
-        MuiExpansionPanelDetails: {
-            root: {
 
-                [breakpoints.down('sm')]: {},
-                '& a': {},
-            },
-        },
-        MuiInputLabel: {
-            root: {
 
-                '&$focused': {
 
-                },
-
-                '&$error': {},
-            },
-            formControl: {},
-            outlined: {
-
-                '&$shrink': {},
-            },
-            filled: {
-
-                [breakpoints.down('sm')]: {},
-                '&$shrink': {},
-                '&$focused': {},
-            },
-        },
-        MuiFormLabel: {
-            root: {
-
-                '&$disabled': {},
-                '&focused': {},
-            },
-        },
         MuiFormControlLabel: {
             root: {
                 marginLeft: 0,
-
-                '& a': {},
-            },
-            label: {
-
-                '&$disabled': {},
             },
         },
-
-
         MuiTypography: {
             root: {
                 fontFamily: _font.secondary,
             },
-
             colorPrimary: {},
             body1: {
                 fontFamily: _font.secondary,
                 fontSize: 20,
-
-
+                lineHeight:1.2
             },
             h5: {
                 fontFamily: _font.secondary,
                 fontSize: 30,
+            },
+            h6:{
+                fontFamily: _font.secondary,
+                fontSize: 18,
+
             }
         },
-
 
         MuiAvatar: {
             root: {
@@ -423,7 +310,6 @@ const theme = createMuiTheme({
                 fontSize: 18,
                 fontWeight: 900,
                 textTransform: "initial",
-
             },
 
             wrapper: {
@@ -434,19 +320,6 @@ const theme = createMuiTheme({
                 backgroundColor: '#fff',
                 [breakpoints.down('sm')]: {},
             },
-            textColorInherit: {
-                [breakpoints.down('sm')]: {
-                    '&:first-child': {},
-                    '&:last-child': {},
-                },
-            },
-        },
-        PrivateTabIndicator: {
-            root: {},
-
-        },
-        MuiTableCell: {
-            root: {},
         },
     },
     palette: _palette,
