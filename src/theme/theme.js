@@ -126,6 +126,16 @@ const theme = createMuiTheme({
                 fontWeight: 600,
             },
         },
+        MuiAppBar:{
+            root:{
+                paddingLeft:16,
+                paddingRight:16
+
+            },
+            colorPrimary:{
+                backgroundColor:'#fff'
+            }
+        },
         MuiButton: {
             root: {
                 textTransform: 'inherit',
@@ -153,7 +163,7 @@ const theme = createMuiTheme({
                 width: '100%',
                 height: 45,
                 maxWidth: 300,
-                fontSize: 23,
+                fontSize: 20,
                 '&:hover': {
                     backgroundColor: '#194467',
                 },
@@ -378,7 +388,7 @@ const theme = createMuiTheme({
             },
             h5: {
                 fontFamily: _font.secondary,
-                fontSize: 35,
+                fontSize: 30,
             }
         },
 

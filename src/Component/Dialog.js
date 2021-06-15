@@ -209,6 +209,16 @@ export default function Dialogs() {
                     }}>
                         После заключения договора, Вы и Ваш друг получат бонус, указанный в правилах.
                     </Typography>
+                    <Typography style={{
+                        fontFamily: _font.secondary,
+                        fontSize: 21,
+                        color:'#194467',
+                        textAlign: "center",
+                        marginBottom: 0,
+                        textDecoration:"underline"
+                    }}>
+                        Спасибо за рекомендацию!
+                    </Typography>
                 </DialogContent>
                 <DialogActions>
                     <Grid container direction={"row"} justify={"center"} alignItems={"center"}>
